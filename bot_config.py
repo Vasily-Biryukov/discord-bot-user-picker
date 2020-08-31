@@ -8,4 +8,4 @@ BOT_PREFIX = ';'
 BOT_ENV_TOKEN = 'USERPICKERTOKEN'
 
 # Used localisation
-BOT_LANGUAGE = 'en_US'
+BOT_LANGUAGE = 'ru_RU'
