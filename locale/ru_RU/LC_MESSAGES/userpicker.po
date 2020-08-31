@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-31 15:59+0500\n"
+"PO-Revision-Date: 2020-08-31 16:24+0500\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"Last-Translator: Vasily Biryukov <kray74vb@gmail.com>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: ru_RU\n"
+
+#. [LOC] Used in ;help group message.
+#. commands_heading=_('Commands:'),
+#. [LOC] Used in ;help message as default command group.
+#: bot.py:22
+msgid "No category"
+msgstr "Без категории"
+
+#. [LOC] Not used at this moment.
+#. aliases_heading=_('Aliases:'),
+#. [LOC] Brief description for ;help command.
+#: bot.py:28
+msgid "Shows this message."
+msgstr "Показывает это сообщение."
+
+#. [LOC] Message for ;help <command> output when command is unknown.
+#: bot.py:33
+msgid "No command called \"{}\" found"
+msgstr "Неизвестная команда \"{}\""
+
+#. [LOC] Message for ;help <group> <subcommand> when subcommand is unknown.
+#: bot.py:38
+#, python-brace-format
+msgid "Command \"{0.qualified_name}\" has no subcommand named {1}"
+msgstr "В категории \"{0.qualified_name}\" нет команды {1}"
+
+#. [LOC] Message for ;help <group> <subcommand> when group is a command, not a group.
+#: bot.py:41
+#, python-brace-format
+msgid "Command \"{0.qualified_name}\" has no subcommands."
+msgstr "\"{0.qualified_name}\" это команда, а не категория."
+
+#. [LOC] Used as a footprint for ;help command.
+#: bot.py:54
+#, python-brace-format
+msgid "Type {0}{1} command for more info on a command."
+msgstr "Напишите {0}{1} команда, чтобы увидеть подробную информацию о команде."
+
+#. [LOC] Bot description. First line in the ;help command output.
+#: bot.py:60
+msgid "User picker."
+msgstr "User picker."
+
+#. [LOC] Used with ;pick <n> when n < 1.
+#: bot.py:73
+msgid "You must pick at least one member."
+msgstr "Нужно выбрать хотя бы одного участника."
+
+#: bot.py:79
+msgid ""
+"You must be in a voice channel :loudspeaker: and {} must have access to this "
+"channel."
+msgstr ""
+"Вы должны быть в голосовом канале :loudspeaker: и у {} должен быть доступ к "
+"этому каналу."
+
+#: bot.py:87
+msgid ""
+"You are alone in this channel :thinking: Call some friends!\n"
+"Do you have friends, are you?"
+msgstr ""
+"Вы в гордом одиночестве :thinking: Может стоит позвать друзей?\n"
+"У вас же есть друзья, да?"
+
+#. [LOC] Used with ;pick <n> when n greater than number of members in voice channel.
+#: bot.py:93
+msgid "Too few members in this channel"
+msgstr "Слишком мало участников на этом канале."
+
+#. [LOC] Brief description of ;pick command, used in ;help message.
+#: bot.py:101
+msgid "Pick random member."
+msgstr "Выбирает случайного участника."
+
+#: bot.py:105
+#, python-brace-format
+msgid ""
+"Randomly pick specified number of members from your voice channel (including "
+"you) and print their names.\n"
+"For example:\n"
+"{0}pick - prints random member name from your voice channel.\n"
+"{0}pick 2 - prints two random members names from your voice channel."
+msgstr ""
+"Случайным образом выбирает указанное количество участников из вашего "
+"голосового канала, включая вас, и выводит их имена.\n"
+"Например:\n"
+"{0}pick - пишет имя одного случайно выбранного участника из вашего "
+"голосового канала.\n"
+"{0}pick 2 - пишет имя двух случайно выбранных участников из вашего "
+"голосового канала."
+
+#. [LOC] Brief description of ;pick command, used in ;help pick message.
+#: bot.py:112
+msgid "Pick random member(s) from your voice channel."
+msgstr "Случайным образом выбирает участника(-ов) из вашего голосового канала."
