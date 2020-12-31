@@ -3,12 +3,24 @@ import gettext
 import random
 import discord
 from discord.ext import commands
+from discord_slash import SlashCommand
+from discord_slash.utils import manage_commands
 
 from bot_config import BOT_NAME, BOT_PREFIX, BOT_LANGUAGE, BOT_ENV_TOKEN
 
+
+class ApplicationCommandOptionType:
+    SUB_COMMAND=1
+    SUB_COMMAND_GROUP=2
+    STRING=3
+    INTEGER=4
+    BOOLEAN=5
+    USER=6
+    CHANNEL=7
+    ROLE=8
+
 translation = gettext.translation('userpicker', localedir='./locale', languages=[BOT_LANGUAGE])
 translation.install()
-
 
 class LocalizedHelpCommand(commands.DefaultHelpCommand):
     """Overridden for localization purposes."""
@@ -66,6 +78,7 @@ bot = commands.Bot(
 localized_help_command = LocalizedHelpCommand()
 bot.help_command = localized_help_command
 
+slash = SlashCommand(bot, auto_register=True)
 
 def pick_impl(ctx, count):
     if count < 1:
@@ -113,6 +126,19 @@ def pick_impl(ctx, count):
 )
 async def pick(ctx, count=1):
     await ctx.send(pick_impl(ctx, count))
+
+@slash.slash(
+    name='pick-user',
+    description=_('Pick random member(s) from your voice channel.'),
+    options=[manage_commands.create_option(
+        name='count',
+        description=_('members count (1 by default)'),
+        option_type=ApplicationCommandOptionType.INTEGER,
+        required=False
+    )]
+)
+async def pick_user(ctx, count=1):
+    await ctx.send(content=pick_impl(ctx, count))
 
 
 token = os.environ[f'{BOT_ENV_TOKEN}']

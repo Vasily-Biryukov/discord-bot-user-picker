@@ -38,10 +38,11 @@ and press **New Application** button.
 * Execute bot.py (if you want logging redirect output to file)
 `bot.py >bot.log 2>&1`
 * Generate bot invitation link on the **OAuth2** page of your application:
-  * In the **scopes** section check *bot* option;
+  * In the **scopes** section check *bot* and *applications.commands* options;
   * In the **bot permissions** section check *View Channels* and *Send Messages* options;
   * Copy link from the bottom of the **scopes** section and paste it to your browser.
 * In your discord text channel type `;help` for list of commands.
+* You can also use `/pick-user` command.
 
 You can change some bot constants before launch in bot_config.py:
 * `BOT_NAME` - name of the bot. Used in some messages.
@@ -52,4 +53,5 @@ Default is *USERPICKERTOKEN*.
 * `BOT_LANGUAGE` - used localization.
 
 ----
-Bot uses [discord.py](https://discordpy.readthedocs.io/en/latest/index.html) package.
+Bot uses [discord.py](https://discordpy.readthedocs.io/en/latest/index.html) package and
+[discord-py-slash-command](https://discord-py-slash-command.readthedocs.io/en/latest/index.html) extension.
