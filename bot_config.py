@@ -7,5 +7,5 @@ BOT_PREFIX = ';'
 # Environment variable with your application token (see installation section of README.md)
 BOT_ENV_TOKEN = 'USERPICKERTOKEN'
 
-# Used localisation
+# Used localization
 BOT_LANGUAGE = 'ru_RU'
