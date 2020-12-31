@@ -5,7 +5,7 @@ Is a Discord bot which helps you to answer a complicated questions
 like:
 * Who's failed the game?
 * Who is the most useless player?
-* Whose mama is fatter?
+* Whose momma is fatter?
 
 And so on.
 
