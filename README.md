@@ -46,7 +46,7 @@ and press **New Application** button.
 You can change some bot constants before launch in bot_config.py:
 * `BOT_NAME` - name of the bot. Used in some messages.
 * `BOT_PREFIX` - prefix for all commands. Default is `;`.
-Change if default prefix is conflicts with other bots on your Discord server.
+Change if default prefix is in conflict with other bots on your Discord server.
 * `BOT_ENV_TOKEN` - environment variable with your application token.
 Default is *USERPICKERTOKEN*.
 * `BOT_LANGUAGE` - used localization.
