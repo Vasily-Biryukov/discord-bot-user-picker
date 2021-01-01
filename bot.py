@@ -9,16 +9,7 @@ from discord_slash.utils import manage_commands
 from bot_config import BOT_NAME, BOT_PREFIX, BOT_LANGUAGE, BOT_ENV_TOKEN
 
 
-class ApplicationCommandOptionType:
-    SUB_COMMAND=1
-    SUB_COMMAND_GROUP=2
-    STRING=3
-    INTEGER=4
-    BOOLEAN=5
-    USER=6
-    CHANNEL=7
-    ROLE=8
-
+# Localization things
 translation = gettext.translation('userpicker', localedir='./locale', languages=[BOT_LANGUAGE])
 translation.install()
 
@@ -65,21 +56,10 @@ class LocalizedHelpCommand(commands.DefaultHelpCommand):
         # [LOC] Used as a footprint for ;help command.
         return _('Type {0}{1} command for more info on a command.').format(self.clean_prefix, command_name)
 
-
-bot = commands.Bot(
-    command_prefix=BOT_PREFIX,
-    # [LOC] Bot description. First line in the ;help command output.
-    description=_('User picker.'),
-    activity=discord.Activity(
-        type=discord.ActivityType.watching,
-        name=f'{BOT_PREFIX}help',
-    )
-)
 localized_help_command = LocalizedHelpCommand()
-bot.help_command = localized_help_command
 
-slash = SlashCommand(bot, auto_register=True)
 
+# Implementation
 def pick_impl(ctx, count):
     if count < 1:
         # [LOC] Used with ;pick <n> when n < 1.
@@ -109,6 +89,21 @@ def pick_impl(ctx, count):
     return ', '.join([user.mention for user in sample])
 
 
+# Create bot and add bot commands
+bot = commands.Bot(
+    command_prefix=BOT_PREFIX,
+    # [LOC] Bot description. First line in the ;help command output.
+    description=_('User picker.'),
+    activity=discord.Activity(
+        type=discord.ActivityType.watching,
+        name=f'{BOT_PREFIX}help',
+    )
+)
+
+# ;help
+bot.help_command = localized_help_command
+
+# ;pick
 @bot.command(
     # [LOC] Brief description of ;pick command, used in ;help message.
     brief=_('Pick random member.'),
@@ -127,6 +122,21 @@ def pick_impl(ctx, count):
 async def pick(ctx, count=1):
     await ctx.send(pick_impl(ctx, count))
 
+
+# Add slash commands
+class ApplicationCommandOptionType:
+    SUB_COMMAND=1
+    SUB_COMMAND_GROUP=2
+    STRING=3
+    INTEGER=4
+    BOOLEAN=5
+    USER=6
+    CHANNEL=7
+    ROLE=8
+
+slash = SlashCommand(bot, auto_register=True)
+
+# /pick-user
 @slash.slash(
     name='pick-user',
     description=_('Pick random member(s) from your voice channel.'),
@@ -141,5 +151,6 @@ async def pick_user(ctx, count=1):
     await ctx.send(content=pick_impl(ctx, count))
 
 
+# Run bot
 token = os.environ[f'{BOT_ENV_TOKEN}']
 bot.run(token)
