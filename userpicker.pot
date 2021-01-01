@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-01 00:11+0500\n"
+"POT-Creation-Date: 2021-01-01 11:24+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,73 +20,73 @@ msgstr ""
 #. [LOC] Used in ;help group message.
 #. commands_heading=_('Commands:'),
 #. [LOC] Used in ;help message as default command group.
-#: bot.py:34
+#: bot.py:25
 msgid "No category"
 msgstr ""
 
 #. [LOC] Not used at this moment.
 #. aliases_heading=_('Aliases:'),
 #. [LOC] Brief description for ;help command.
-#: bot.py:40
+#: bot.py:31
 msgid "Shows this message."
 msgstr ""
 
 #. [LOC] Message for ;help <command> output when command is unknown.
-#: bot.py:45
+#: bot.py:36
 msgid "No command called \"{}\" found"
 msgstr ""
 
 #. [LOC] Message for ;help <group> <subcommand> when subcommand is unknown.
-#: bot.py:50
+#: bot.py:41
 #, python-brace-format
 msgid "Command \"{0.qualified_name}\" has no subcommand named {1}"
 msgstr ""
 
 #. [LOC] Message for ;help <group> <subcommand> when group is a command, not a group.
-#: bot.py:53
+#: bot.py:44
 #, python-brace-format
 msgid "Command \"{0.qualified_name}\" has no subcommands."
 msgstr ""
 
 #. [LOC] Used as a footprint for ;help command.
-#: bot.py:66
+#: bot.py:57
 #, python-brace-format
 msgid "Type {0}{1} command for more info on a command."
 msgstr ""
 
-#. [LOC] Bot description. First line in the ;help command output.
-#: bot.py:72
-msgid "User picker."
-msgstr ""
-
 #. [LOC] Used with ;pick <n> when n < 1.
-#: bot.py:86
+#: bot.py:66
 msgid "You must pick at least one member."
 msgstr ""
 
-#: bot.py:92
+#: bot.py:72
 msgid ""
 "You must be in a voice channel :loudspeaker: and {} must have access to this "
 "channel."
 msgstr ""
 
-#: bot.py:100
+#: bot.py:80
 msgid ""
 "You are alone in this channel :thinking: Call some friends!\n"
 "Do you have friends, are you?"
 msgstr ""
 
 #. [LOC] Used with ;pick <n> when n greater than number of members in voice channel.
-#: bot.py:106
+#: bot.py:86
 msgid "Too few members in this channel"
 msgstr ""
 
+#. [LOC] Bot description. First line in the ;help command output.
+#: bot.py:96
+msgid "User picker."
+msgstr ""
+
 #. [LOC] Brief description of ;pick command, used in ;help message.
-#: bot.py:114
+#: bot.py:109
 msgid "Pick random member."
 msgstr ""
 
-#: bot.py:118
+#: bot.py:113
 #, python-brace-format
 msgid ""
 "Randomly pick specified number of members from your voice channel (including "
@@ -97,10 +97,10 @@ msgid ""
 msgstr ""
 
 #. [LOC] Brief description of ;pick command, used in ;help pick message.
-#: bot.py:125 bot.py:132
+#: bot.py:120 bot.py:142
 msgid "Pick random member(s) from your voice channel."
 msgstr ""
 
-#: bot.py:136
+#: bot.py:145
 msgid "members count (1 by default)"
 msgstr ""
